@@ -1,0 +1,33 @@
+.afCloudinary button {
+  position: relative;
+}
+
+.afCloudinary button .message {
+  position: relative;
+  z-index: 2;
+}
+
+.afCloudinary.uploading button {
+  background: #999;
+  transition: background .325s;
+}
+
+.afCloudinary .uploadprogress {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  background: linear-gradient(to right bottom, #6cd6d1, #46c2d2);
+  z-index: 0;
+  transition: width 0.065s, opacity 0.163s;
+}
+
+.afCloudinary.uploading .uploadprogress {
+  opacity: 1;
+}
+
+.afCloudinary-thumbnail img {
+  width: 200px;
+}

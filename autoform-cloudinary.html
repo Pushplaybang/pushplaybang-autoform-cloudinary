@@ -1,0 +1,73 @@
+<template name="afCloudinary">
+  <div class="afCloudinary {{props.uploadingClass}}">
+    {{#if props.id}}
+      <div class="afCloudinary-thumbnail">
+        <a href="{{props.url}}" target="_blank">
+          <img src="{{
+            cloudinaryUrl props.id
+            quality='auto:good'
+            format=jpg
+            width=240
+            height=240
+            crop='fill'
+            gravity='face'
+          }}" alt="avatar">
+        </a>
+      </div>
+      <a href="#" class="js-remove">Remove</a>
+    {{else}}
+      <button type="button">
+        <span class="uploadprogress"></span>
+        <span class="message">{{ props.buttonLabel }}</span>
+      </button>
+    {{/if}}
+    <input
+      name="file"
+      type="file"
+      class="cloudinary-fileupload"
+      data-cloudinary-field="image_id"
+      style="display: none"
+      accept="{{props.accept}}"/>
+    <input {{atts}}
+      type="hidden"
+      name="url"
+      value="{{props.url}}"/>
+  </div>
+</template>
+
+<template name="afCloudinary_bootstrap3">
+  <div class="afCloudinary {{props.uploadingClass}}">
+    {{#if props.id}}
+      <div class="afCloudinary-thumbnail">
+        <a href="{{props.url}}" target="_blank">
+          <img src="{{
+            cloudinaryUrl props.id
+            quality='auto:good'
+            format=jpg
+            width=240
+            height=240
+            crop='fill'
+            gravity='face'
+          }}" alt="avatar">
+        </a>
+      </div>
+      <a href="#" class="js-remove"><span class="glyphicon glyphicon-remove"></span> Remove</a>
+    {{else}}
+      <button type="button" class="btn btn-default">
+        <span class="uploadprogress"></span>
+        <span class="message">{{ props.buttonLabel }}</span>
+      </button>
+    {{/if}}
+    <input
+      name="file"
+      type="file"
+      class="cloudinary-fileupload form-control"
+      data-cloudinary-field="image_id"
+      style="display: none"
+      accept="{{props.accept}}"/>
+    <input {{atts}}
+      type="hidden"
+      name="url"
+      value="{{props.url}}"/>
+  </div>
+</template>
