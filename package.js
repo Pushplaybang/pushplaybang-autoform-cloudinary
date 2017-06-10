@@ -1,8 +1,8 @@
 Package.describe({
   name: 'pushplaybang:autoform-cloudinary',
-  git: 'https://github.com/pushplaybang/autoform-cloudinary.git',
+  git: 'https://github.com/Pushplaybang/pushplaybang-autoform-cloudinary',
   summary: 'Autoform cloudinary upload',
-  version: '0.0.5',
+  version: '0.0.6',
 });
 
 Package.onUse(function(api) {
