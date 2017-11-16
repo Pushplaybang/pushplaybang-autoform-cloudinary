@@ -2,7 +2,7 @@ Package.describe({
   name: 'pushplaybang:autoform-cloudinary',
   git: 'https://github.com/Pushplaybang/pushplaybang-autoform-cloudinary',
   summary: 'Autoform cloudinary upload',
-  version: '0.0.6',
+  version: '0.0.7',
 });
 
 Package.onUse(function(api) {
@@ -36,4 +36,6 @@ Package.onUse(function(api) {
   api.addFiles([
     'autoform-cloudinary-server.js',
   ], 'server');
+
+  api.imply('nekojira:cloudinary-jquery-upload@0.1.0');
 });
