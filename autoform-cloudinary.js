@@ -1,10 +1,10 @@
 /* eslint-disable */
-var _AfCloudinaryBroker = new ReactiveVar();
+var _AfCloudinaryBroker = new ReactiveDict();
 
 AutoForm.addInputType("cloudinary", {
   template: "afCloudinary",
   valueOut() {
-    return _AfCloudinaryBroker.get();
+    return _AfCloudinaryBroker.get(this.context.name);
   }
 });
 
@@ -40,7 +40,7 @@ _.each(templates, function(tmpl) {
 
     self.setOutput = function() {
       Tracker.nonreactive(function() {
-        _AfCloudinaryBroker.set(self.uploadData.get());
+        _AfCloudinaryBroker.set(self.data.name, self.uploadData.get());
       });
     };
   });
